@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  width: 95%;
+  background-color: #41b3a3;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  margin-bottom: 2em;
+}
+
+.inputs input {
+  width: 30%;
+  height: 2.5em;
+  background-color: #e27d60;
+  color: white;
+  border-radius: 10px;
+}
+
+.inputs label {
+  margin: 1em 0;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.btn {
+  margin-top: 2em;
+  padding: 0.5em;
+  width: 10%;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  color: #e27d60;
+}
