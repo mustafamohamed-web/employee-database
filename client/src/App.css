@@ -37,9 +37,12 @@ h1 {
 .btn {
   margin-top: 2em;
   padding: 0.5em;
-  width: 10%;
+  width: 15%;
+  height: 50px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: white;
-  color: #e27d60;
+  background-color: #85dcba;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
 }
