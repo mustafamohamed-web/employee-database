@@ -8,9 +8,7 @@ const Input = () => {
   const [position, setPosition] = useState("");
   const [salary, setSalary] = useState(0);
 
-  // const handleClick = () => {
-  //   console.log(name + age + salary + postion);
-  // };
+  const [employee, setEmployee] = useState([]);
 
   const createEmployee = () => {
     Axios.post("http://localhost:3001/create", {
@@ -23,8 +21,14 @@ const Input = () => {
     });
   };
 
+  const displayEmployee = () => {
+    Axios.get("http://localhost:3001/employees").then((response) => {
+      setEmployee(response.data);
+    });
+  };
+
   return (
-    <div>
+    <div className="container">
       <h1>Mustafa's Payroll</h1>
       <div className="inputs">
         <label>Name</label>
@@ -58,6 +62,22 @@ const Input = () => {
         <button onClick={createEmployee} className="btn">
           Add Employee
         </button>
+        <button onClick={displayEmployee} className="btn">
+          Show Employees
+        </button>
+        <div className="cards">
+          {employee.map((person, key) => {
+            const { name, age, position, salary } = person;
+            return (
+              <div className="employee-list">
+                <h3 className="name">{name}</h3>
+                <h3 className="age">{age}</h3>
+                <h3 className="position">{position}</h3>
+                <h3 className="salary">{salary}</h3>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

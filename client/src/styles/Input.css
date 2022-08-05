@@ -46,3 +46,32 @@ h1 {
   font-weight: 600;
   font-size: 1rem;
 }
+.cards {
+  display: flex;
+}
+.employee-list {
+  height: 280px;
+  width: 200px;
+  background-color: #e27d60;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  position: relative;
+  left: 0px;
+  margin: 2em 0;
+  display: flex;
+  margin: 2em 2em;
+}
+
+.name {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.employee-list h3 {
+  margin: 0.75em;
+  display: flex;
+  flex-direction: column;
+}
