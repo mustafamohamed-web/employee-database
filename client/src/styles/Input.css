@@ -15,8 +15,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em 0;
-  margin-bottom: 2em;
+  padding: 0.5em 0;
+  margin-bottom: 3em;
 }
 
 .inputs input {
@@ -25,6 +25,7 @@ h1 {
   background-color: #e27d60;
   color: white;
   border-radius: 10px;
+  margin: 0.2em 0;
 }
 
 .inputs label {
@@ -34,10 +35,15 @@ h1 {
   font-size: 1.125rem;
 }
 
+.buttons {
+  display: flex;
+}
+
 .btn {
   margin-top: 2em;
+  margin-left: 0.75em;
   padding: 0.5em;
-  width: 15%;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   cursor: pointer;
@@ -46,8 +52,11 @@ h1 {
   font-weight: 600;
   font-size: 1rem;
 }
+
 .cards {
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 .employee-list {
   height: 280px;
@@ -60,18 +69,18 @@ h1 {
   margin: 2em 0;
   display: flex;
   margin: 2em 2em;
+  font-family: "Courier New", Courier, monospace;
+  padding: 1em;
 }
 
-.name {
-  color: white;
-  font-weight: 300;
-  position: absolute;
-  left: 20px;
-  top: 15px;
+.employee h3 {
+  margin: 1.125em;
+  font-size: 1rem;
 }
 
-.employee-list h3 {
-  margin: 0.75em;
-  display: flex;
-  flex-direction: column;
+.employee h2 {
+  font-size: 2rem;
+}
+
+.btn {
 }

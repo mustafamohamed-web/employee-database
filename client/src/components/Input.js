@@ -17,7 +17,10 @@ const Input = () => {
       position: position,
       salary: salary,
     }).then(() => {
-      console.log("success");
+      setEmployee([
+        ...employee,
+        { name: name, age: age, position: position, salary: salary },
+      ]);
     });
   };
 
@@ -59,21 +62,27 @@ const Input = () => {
             setSalary(e.target.value);
           }}
         />
-        <button onClick={createEmployee} className="btn">
-          Add Employee
-        </button>
-        <button onClick={displayEmployee} className="btn">
-          Show Employees
-        </button>
+        <div className="buttons">
+          <button onClick={createEmployee} className="btn one ">
+            Add Employee
+          </button>
+          <button onClick={displayEmployee} className="btn two">
+            Show Employees
+          </button>
+        </div>
+
         <div className="cards">
           {employee.map((person, key) => {
             const { name, age, position, salary } = person;
             return (
               <div className="employee-list">
-                <h3 className="name">{name}</h3>
-                <h3 className="age">{age}</h3>
-                <h3 className="position">{position}</h3>
-                <h3 className="salary">{salary}</h3>
+                <div>
+                  <h2>Employee Data</h2>
+                  <h3 className="name">Name: {name}</h3>
+                  <h3 className="age"> Age: {age}</h3>
+                  <h3 className="position"> Position: {position}</h3>
+                  <h3 className="salary"> Salary: {salary}</h3>
+                </div>
               </div>
             );
           })}
