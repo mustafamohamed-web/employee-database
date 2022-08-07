@@ -37,6 +37,10 @@ h1 {
 
 .buttons {
   display: flex;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7em;
 }
 
 .btn {
@@ -54,13 +58,13 @@ h1 {
 }
 
 .cards {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   width: 100%;
 }
 .employee-list {
   height: 280px;
-  width: 200px;
+  width: 50%;
   background-color: #e27d60;
   border-radius: 10px;
   box-shadow: -1rem 0 3rem #000;
@@ -82,5 +86,14 @@ h1 {
   font-size: 2rem;
 }
 
-.btn {
+.wage-input {
+  background-color: whitesmoke;
+  color: black;
+  width: 70%;
+  border-radius: 10px;
+  height: 2em;
+}
+
+.update-btn {
+  color: black;
 }
