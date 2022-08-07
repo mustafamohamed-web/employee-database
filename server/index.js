@@ -17,11 +17,38 @@ app.post("/create", (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
   const position = req.body.position;
-  const salary = req.body.wage;
+  const salary = req.body.salary;
 
   db.query(
     "INSERT INTO employees (name, age, position, salary) VALUES (?,?,?,?)",
     [name, age, position, salary],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted");
+      }
+    }
+  );
+});
+
+app.get("/employees", (req, res) => {
+  db.query("SELECT * FROM  employees", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.put("/update", (req, res) => {
+  const id = req.body.id;
+  const salary = req.body.salary;
+
+  db.query(
+    "UPDATE employees SET salary = ? WHERE ID =?",
+    [salary, id],
     (err, result) => {
       if (err) {
         console.log(err);
