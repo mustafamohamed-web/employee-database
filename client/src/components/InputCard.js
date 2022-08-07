@@ -8,6 +8,7 @@ const InputCard = ({
   employee,
   setNewSalary,
   updateEmployee,
+  deleteEmployee,
   id,
 }) => {
   return (
@@ -30,11 +31,18 @@ const InputCard = ({
                   setNewSalary(e.target.value);
                 }}
               />
+
               <button
                 className="update-btn"
                 onClick={() => updateEmployee(person.id)}
               >
                 Update Wage
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => deleteEmployee(person.id)}
+              >
+                Delete
               </button>
             </div>
           </div>

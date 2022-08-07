@@ -37,7 +37,29 @@ const Input = () => {
       salary: newSalary,
       id: id,
     }).then((response) => {
-      alert("salary updated");
+      setEmployee(
+        employee.map((person) => {
+          return person.id == id
+            ? {
+                id: person.id,
+                name: person.name,
+                country: person.country,
+                age: person.age,
+                position: person.position,
+                salary: newSalary,
+              }
+            : person;
+        })
+      );
+    });
+  };
+  const deleteEmployee = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+      setEmployee(
+        employee.filter((person) => {
+          return person.id != id;
+        })
+      );
     });
   };
 
@@ -60,6 +82,7 @@ const Input = () => {
         salar={salary}
         setNewSalary={setNewSalary}
         updateEmployee={updateEmployee}
+        deleteEmployee={deleteEmployee}
       />
     </div>
   );
