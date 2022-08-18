@@ -1,10 +1,18 @@
 import React from "react";
 
 const InputForm = ({
+  name,
+  age,
+  position,
+  salary,
+  email,
+  number,
   setName,
   setAge,
   setPosition,
   setSalary,
+  setEmail,
+  setNumber,
   createEmployee,
   displayEmployee,
 }) => {

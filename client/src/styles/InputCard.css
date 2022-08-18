@@ -1,0 +1,35 @@
+.employee-list {
+  width: 700px;
+  height: auto;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 2em;
+  display: flex;
+  padding: 10px;
+  background-color: #e27d60;
+  border-radius: 10px;
+}
+
+h2,
+h3 {
+  margin: 20px;
+}
+
+input {
+  width: 200px;
+  height: 50px;
+  font-size: 1.125rem;
+  padding-left: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}

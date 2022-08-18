@@ -18,10 +18,12 @@ app.post("/create", (req, res) => {
   const age = req.body.age;
   const position = req.body.position;
   const salary = req.body.salary;
+  const email = req.body.email;
+  const number = req.body.number;
 
   db.query(
-    "INSERT INTO employees (name, age, position, salary) VALUES (?,?,?,?)",
-    [name, age, position, salary],
+    "INSERT INTO employees (name, age, position, salary, email, number) VALUES (?,?,?,?,?,?)",
+    [name, age, position, salary, email, number],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -61,12 +63,11 @@ app.put("/update", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
-
-  db.query("DELETE FROM employees WHERE 'id' = ?", id, (err, result) => {
+  db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
-      res.send("Values Inserted");
+      res.send(result);
     }
   });
 });
