@@ -19,11 +19,11 @@ app.post("/create", (req, res) => {
   const position = req.body.position;
   const salary = req.body.salary;
   const email = req.body.email;
-  const number = req.body.number;
+  const service = req.body.service;
 
   db.query(
-    "INSERT INTO employees (name, age, position, salary, email, number) VALUES (?,?,?,?,?,?)",
-    [name, age, position, salary, email, number],
+    "INSERT INTO new_table (name, age, position, salary, email, service) VALUES (?,?,?,?,?,?)",
+    [name, age, position, salary, email, service],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -35,7 +35,7 @@ app.post("/create", (req, res) => {
 });
 
 app.get("/employees", (req, res) => {
-  db.query("SELECT * FROM  employees", (err, result) => {
+  db.query("SELECT * FROM  new_table", (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -49,7 +49,7 @@ app.put("/update", (req, res) => {
   const salary = req.body.salary;
 
   db.query(
-    "UPDATE employees SET salary = ? WHERE ID =?",
+    "UPDATE new_table SET salary = ? WHERE id =?",
     [salary, id],
     (err, result) => {
       if (err) {
@@ -63,11 +63,12 @@ app.put("/update", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
-  db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
+
+  db.query("DELETE FROM new_table WHERE id = ?", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
-      res.send(result);
+      res.send("Values Inserted");
     }
   });
 });

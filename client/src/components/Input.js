@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Input.css";
 import Axios from "axios";
 import InputCard from "./InputCard";
 import InputForm from "./InputForm";
@@ -11,7 +10,7 @@ const Input = () => {
   const [salary, setSalary] = useState(0);
   const [employee, setEmployee] = useState([]);
   const [email, setEmail] = useState("");
-  const [number, setNumber] = (useState = 0);
+  const [service, setService] = useState(0);
   const [newSalary, setNewSalary] = useState(0);
 
   const createEmployee = () => {
@@ -21,7 +20,7 @@ const Input = () => {
       position: position,
       salary: salary,
       email: email,
-      numer: number,
+      service: service,
     }).then(() => {
       setEmployee([
         ...employee,
@@ -31,7 +30,7 @@ const Input = () => {
           position: position,
           salary: salary,
           email: email,
-          number: number,
+          service: service,
         },
       ]);
     });
@@ -50,7 +49,7 @@ const Input = () => {
     }).then((response) => {
       setEmployee(
         employee.map((person) => {
-          return person.id === id
+          return person.id == id
             ? {
                 id: person.id,
                 name: person.name,
@@ -58,7 +57,7 @@ const Input = () => {
                 age: person.age,
                 position: person.position,
                 email: person.email,
-                number: person.number,
+                service: person.service,
                 salary: newSalary,
               }
             : person;
@@ -69,31 +68,27 @@ const Input = () => {
   const deleteEmployee = (id) => {
     Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
       setEmployee(
-        employee.filter((val) => {
-          return val.id !== id;
+        employee.filter((person) => {
+          return person.id != id;
         })
       );
     });
   };
 
   return (
-    <div className="container">
-      <InputForm
-        setAge={setAge}
-        setName={setName}
-        setPosition={setPosition}
-        setSalary={setSalary}
-        setEmail={setEmail}
-        setNumber={setNumber}
-        createEmployee={createEmployee}
-        displayEmployee={displayEmployee}
-        name={name}
-        age={age}
-        salary={salary}
-        position={position}
-        email={email}
-        number={number}
-      />
+    <div>
+      <div className="container">
+        <InputForm
+          setAge={setAge}
+          setName={setName}
+          setPosition={setPosition}
+          setSalary={setSalary}
+          setEmail={setEmail}
+          setService={setService}
+          createEmployee={createEmployee}
+          displayEmployee={displayEmployee}
+        />
+      </div>
 
       <InputCard
         employee={employee}
@@ -102,7 +97,7 @@ const Input = () => {
         position={position}
         salar={salary}
         email={email}
-        number={number}
+        service={service}
         setNewSalary={setNewSalary}
         updateEmployee={updateEmployee}
         deleteEmployee={deleteEmployee}

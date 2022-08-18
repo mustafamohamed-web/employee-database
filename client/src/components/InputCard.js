@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/InputCard.css";
+import "../styles/InputForm.css";
 
 const InputCard = ({
   name,
@@ -7,7 +8,7 @@ const InputCard = ({
   position,
   salary,
   email,
-  number,
+  service,
   employee,
   setNewSalary,
   updateEmployee,
@@ -19,39 +20,35 @@ const InputCard = ({
       {employee.map((person, key) => {
         const { name, age, position, salary, email, number } = person;
         return (
-          <div className="employee-list">
-            <div>
-              <h2 className="heading">Employee Data</h2>
-              <h3 className="name">Name: {name}</h3>
-              <h3 className="age"> Age: {age}</h3>
-              <h3 className="position"> Position: {position}</h3>
-              <h3 className="salary"> Salary: {salary}</h3>
-              <h3 className="email"> email {email}</h3>
-              <h3 className="number"> number: {number}</h3>
+          <div className="profile-container">
+            <p className="info full-name">{name}</p>
+            <p className="info role">{position}</p>
+            <p className="info place">{email}</p>
+
+            <div className="posts-info">
+              <p>
+                <span>{salary}</span> salary
+              </p>
+              <p>
+                <span>{service}</span> Service
+              </p>
+              <p>
+                <span>{age}</span> WAge
+              </p>
             </div>
 
-            <div className="update-section">
-              <input
-                className="wage-input"
-                type="number"
-                placeholder="update wage...."
-                onChange={(e) => {
-                  setNewSalary(e.target.value);
-                }}
-              />
-              <button
-                className="btn three"
-                onClick={() => updateEmployee(person.id)}
-              >
-                Update Wage
-              </button>
-              <button
-                className="btn four"
-                onClick={() => deleteEmployee(person.id)}
-              >
-                Delete
-              </button>
-            </div>
+            <button
+              className="action"
+              onClick={() => updateEmployee(person.id)}
+            >
+              Update Wage
+            </button>
+            <button
+              className="action message"
+              onClick={() => deleteEmployee(person.id)}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
