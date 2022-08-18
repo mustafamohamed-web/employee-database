@@ -1,18 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #334e64;
-  font-family: "Montserrat", sans-serif;
-}
+/*  */
 
-body {
+/* body {
   min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(20deg, #ff2844, #6741ff);
+} */
+
+.cards {
+  display: flex;
+  gap: 2em;
+  margin: 4em 2em;
+  flex-wrap: wrap;
 }
 
 .profile-container {
@@ -157,4 +158,8 @@ body {
 .action:hover {
   transform: scale(1.05);
   opacity: 0.85;
+}
+
+input {
+  border-radius: 10px;
 }

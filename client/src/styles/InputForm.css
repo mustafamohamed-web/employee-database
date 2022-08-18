@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-top: 10em;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .container {

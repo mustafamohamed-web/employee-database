@@ -33,9 +33,15 @@ const InputCard = ({
                 <span>{service}</span> Service
               </p>
               <p>
-                <span>{age}</span> WAge
+                <span>{age}</span> Age
               </p>
             </div>
+            <input
+              type="number"
+              onChange={(event) => {
+                setNewSalary(event.target.value);
+              }}
+            />
 
             <button
               className="action"

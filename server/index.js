@@ -63,12 +63,11 @@ app.put("/update", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
-
   db.query("DELETE FROM new_table WHERE id = ?", id, (err, result) => {
     if (err) {
       console.log(err);
     } else {
-      res.send("Values Inserted");
+      res.send(result);
     }
   });
 });
