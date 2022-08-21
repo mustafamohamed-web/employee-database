@@ -77,7 +77,7 @@ const Input = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container-2">
         <InputForm
           setAge={setAge}
           setName={setName}

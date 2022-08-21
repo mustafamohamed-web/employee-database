@@ -13,7 +13,7 @@ const InputForm = ({
 }) => {
   return (
     <div className="container">
-      <div className="title">Emplyee Registration</div>
+      <div className="title">Employee Registration</div>
       <div className="content">
         <form action="#">
           <div className="user-details">
